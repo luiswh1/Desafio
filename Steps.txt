@@ -1,3 +1,3 @@
 // O DevolucaoController ja esta criado porem todo conteudo relacionado a ele se encontra COMENTADO nos arquivos: DevolucaoController, ./routes/devolucoes, ./database/index.js e no app.js.
 1 - Verificar os INCLUDES no controller DevolucoesController (estao dando erro)
-na linha 10 - 13 e 23 - 26. 
+na linha 10 - 13 e 23 - 26.  -- Luis.
