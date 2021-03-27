@@ -1,3 +1,23 @@
 // O DevolucaoController ja esta criado porem todo conteudo relacionado a ele se encontra COMENTADO nos arquivos: DevolucaoController, ./routes/devolucoes, ./database/index.js e no app.js.
 1 - Verificar os INCLUDES no controller DevolucoesController (estao dando erro)
 na linha 10 - 13 e 23 - 26.  -- Luis.
+
+//Os Stocks não estão aparecendo no Insomnia. Aparece o erro:
+(node:11260) UnhandledPromiseRejectionWarning: SequelizeDatabaseError: column "stock_id" does not exist
+Todos os Controller estão com tratamento de erro, pra testar sem esse tratamento, só precisa comentar as linhas
+try{
+
+}
+catch(error){
+    return res.status(400).send({
+        message: "blá blá blá"
+    });
+}
+
+Quanto ao DevoluçãoController: O include realmente não é necessário, ele é aapenas uma outra forma de ligação, mas
+não consegui muita informação sobre, por isso algumas tabelas tem e outras não.
+include: [{
+    model: blá
+}]
+OBS.: o comando "= new Date()" no DevolucaoController também não é necessário, dava erro. A data é incluída a mão pelo
+Insomnia. --Milene

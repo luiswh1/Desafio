@@ -2,13 +2,17 @@ import Sequelize from 'sequelize';
 import config from '../config/database';
 import Categoria from '../app/models/Categoria';
 import Stock from '../app/models/Stock';
-//import Devolucao from '../app/models/Devolucao';
+import Produto from '../app/models/Produto';
+import Vendas from '../app/models/Vendas';
+import Devolucao from '../app/models/Devolucao';
 
 
 const models = [
     Categoria,
     Stock,
-   // Devolucao
+    Produto,
+    Vendas,
+    Devolucao,
 ];
 
 class Database {
