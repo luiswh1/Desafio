@@ -21,3 +21,6 @@ include: [{
 }]
 OBS.: o comando "= new Date()" no DevolucaoController também não é necessário, dava erro. A data é incluída a mão pelo
 Insomnia. --Milene
+
+Apareceu todos os erros possiveis aqui comigo, estou tentando resolver, não vou alterar nada ate dar certo.
+--Deivid
