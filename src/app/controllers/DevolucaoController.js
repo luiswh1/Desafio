@@ -7,10 +7,10 @@ class DevolucaoController {
     async index(req, res) {
 
         const devolucoes = await Devolucao.findAll({
-            include: [
+          /*  include: [
                Stock,
                Produto 
-            ]
+            ]*/
         });
 
         return res.json(devolucoes);
@@ -20,10 +20,10 @@ class DevolucaoController {
         const { id } = req.params;
 
         const devolucoes = await Devolucao.findByPk(id, {
-            include: [
+           /* include: [
                 Stock,
                 Produto
-            ]
+            ]*/
         });
 
         return res.json(devolucoes);
