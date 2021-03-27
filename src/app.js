@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import './database/index';
 import CategoriaRout from './app/routes/categoria';
 import StockRout from './app/routes/stock';
-import DevolucaoRout from './app/routes/devolucoes';
+//import DevolucaoRout from './app/routes/devolucoes';
 
 
 class App {
@@ -31,7 +31,7 @@ class App {
     routers() {
        this.server.use(CategoriaRout);
        this.server.use(StockRout);
-       this.server.use(DevolucaoRout);
+       //this.server.use(DevolucaoRout);
     }
 }
 

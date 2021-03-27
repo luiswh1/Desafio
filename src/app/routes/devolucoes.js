@@ -1,4 +1,4 @@
-import { Router } from 'express';
+/*import { Router } from 'express';
 import DevolucaoController from '../controllers/DevolucaoController';
 
 const routes = new Router();
@@ -9,4 +9,4 @@ routes.post('/devolucoes', DevolucaoController.store);
 routes.put('/devolucoes/:id', DevolucaoController.update);
 routes.delete('/devolucoes/:id', DevolucaoController.delete);
 
-export default routes;
+export default routes;*/
