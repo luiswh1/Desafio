@@ -55,3 +55,5 @@ class Devolucao extends Model {
         });
     }
 }
+
+export default Devolucao;
