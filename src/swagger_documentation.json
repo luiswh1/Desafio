@@ -1,0 +1,1484 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Lojinha do Marcelo",
+    "description": "Lojas Marcelo"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/categorias": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Lista de categorias",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Criar uma nova categoria",
+        "parameters": [
+          {
+            "name": "categoria",
+            "in": "body",
+            "description": "Dados da categoria",
+            "schema": {
+              "$ref": "#/definitions/CategoriaCreate"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da categoria",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#definitions/Categoria"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Dados inválidos"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categorias/{id}": {
+      "get": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Busca uma categoria pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID da categoria"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Categoria não encontrada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Categorias"
+        ],
+        "description": "Atualiza os dados de uma categoria já criada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "categoria",
+            "in": "body",
+            "description": "Dados da categoria",
+            "schema": {
+              "$ref": "#/definitions/CategoriaUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Categoria"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Categoria não encontrada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Categias"
+        ],
+        "description": "Obtem uma categoria pelo ID e a deleta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID da categoria"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/CategoriaDelete"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Falha ao deletar a categoria"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/devolucoes": {
+      "get": {
+        "tags": [
+          "Devoluções"
+        ],
+        "description": "Listagem de devoluções",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Devolucao"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Devoluções"
+        ],
+        "description": "Criar uma nova devolução",
+        "parameters": [
+          {
+            "name": "devolucao",
+            "in": "body",
+            "description": "Dados da devolução",
+            "schema": {
+              "$ref": "#/definitions/DevolucaoCreate"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da devolução",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Devolucao"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Dados inválidos."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/devolucoes/{id}": {
+      "get": {
+        "tags": [
+          "Devoluções"
+        ],
+        "description": "Obtem uma devolução pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID da devolução"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ListaDeDevolucoes"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Devolução não encontrada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Devoluções"
+        ],
+        "description": "Atualiza os dados de uma devolução já criada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "devolucao",
+            "in": "body",
+            "description": "Dados da devolução",
+            "schema": {
+              "$ref": "#/definitions/DevolucaoUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Devolucao"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Devolução não encontrada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Devoluções"
+        ],
+        "description": "Obtem uma devolução pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID da devolução"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/DevolucaoDelete"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Falha ao deletar a devolução."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produtos": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Listagem de produtos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Produto"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Criar um novo produto",
+        "parameters": [
+          {
+            "name": "produto",
+            "in": "body",
+            "description": "Dados do produto",
+            "schema": {
+              "$ref": "#/definitions/ProdutoCreate"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do produto",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Produto"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Dados inválidos."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produtos/{id}": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Obtem um produto pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID do produto"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ListaDeProdutos"
+            },
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Produto não encontrado."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Atualiza os dados de um produto já criado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "produto",
+            "in": "body",
+            "description": "Dados do produto",
+            "schema": {
+              "$ref": "#/definitions/ProdutoUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Produto"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Produto não encontrado."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Obtem um produto pelo ID e deleta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID do produto"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ProdutoDelete"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Falha ao deletar o produto"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stocks": {
+      "get": {
+        "tags": [
+          "Stocks"
+        ],
+        "description": "Listagem de stocks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Stock"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Stocks"
+        ],
+        "description": "Criar um novo stock",
+        "parameters": [
+          {
+            "name": "stock",
+            "in": "body",
+            "description": "Dados do stock",
+            "schema": {
+              "$ref": "#/definitions/StockCreate"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do stock",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Stock"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Dados inválidos."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stocks/{id}": {
+      "get": {
+        "tags": [
+          "Stocks"
+        ],
+        "description": "Obtem um stock pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID do stock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ListaDeStocks"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Stock não encontrado."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Stocks"
+        ],
+        "description": "Atualiza os dados de um stock já criado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "stock",
+            "in": "body",
+            "description": "Dados do stock",
+            "schema": {
+              "$ref": "#/definitions/StockUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Stock"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Stock não encontrado."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Stocks"
+        ],
+        "description": "Obtem um stock pelo ID e deleta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID do stock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/StockDelete"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Falha ao deletar o stock"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vendas": {
+      "get": {
+        "tags": [
+          "Vendas"
+        ],
+        "description": "Listagem de vendas",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Venda"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Vendas"
+        ],
+        "description": "Criar uma nova venda",
+        "parameters": [
+          {
+            "name": "venda",
+            "in": "body",
+            "description": "Dados da venda",
+            "schema": {
+              "$ref": "#/definitions/VendaCreate"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da venda",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Venda"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Dados inválidos."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vendas/{id}": {
+      "get": {
+        "tags": [
+          "Vendas"
+        ],
+        "description": "Obtem uma venda pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID da venda"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ListaDeVendas"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Venda não encontrada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Vendas"
+        ],
+        "description": "Atualiza os dados de uma venda já criada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "venda",
+            "in": "body",
+            "description": "Dados da venda",
+            "schema": {
+              "$ref": "#/definitions/VendaUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Venda"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Venda não encontrada"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Vendas"
+        ],
+        "description": "Obtem uma venda pelo ID e deleta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID da venda"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/VendaDelete"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Falha ao deletar a venda"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Categoria": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "name": {
+          "type": "string",
+          "example": "Alimentos"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "ListaDeCategorias": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 123
+          },
+          "name": {
+            "type": "string",
+            "example": "Alimentos"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "CategoriaCreate": {
+      "type": "object",
+      "properties": {
+        "$name": {
+          "type": "string",
+          "example": "Alimentos"
+        }
+      },
+      "required": [
+        "$name"
+      ]
+    },
+    "CategoriaUpdate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Alimentos"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "CategoriaDelete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "name": {
+          "type": "string",
+          "example": "Alimentos"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "Devolucao": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "motivo": {
+          "type": "string",
+          "example": "Produto estragado"
+        }
+      },
+      "required": [
+        "id",
+        "stock_id",
+        "produto_id",
+        "motivo"
+      ]
+    },
+    "ListaDeDevolucoes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 123
+          },
+          "stock_id": {
+            "type": "number",
+            "example": 123
+          },
+          "produto_id": {
+            "type": "number",
+            "example": 123
+          },
+          "motivo": {
+            "type": "string",
+            "example": "Produto estragado"
+          }
+        },
+        "required": [
+          "id",
+          "stock_id",
+          "produto_id",
+          "motivo"
+        ]
+      }
+    },
+    "DevolucaoCreate": {
+      "type": "object",
+      "properties": {
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "motivo": {
+          "type": "string",
+          "example": "Produto estragado"
+        }
+      },
+      "required": [
+        "stock_id",
+        "produto_id",
+        "motivo"
+      ]
+    },
+    "DevolucaoUpdate": {
+      "type": "object",
+      "properties": {
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "motivo": {
+          "type": "string",
+          "example": "Produto estragado"
+        }
+      },
+      "required": [
+        "stock_id",
+        "produto_id",
+        "motivo"
+      ]
+    },
+    "DevolucaoDelete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "motivo": {
+          "type": "string",
+          "example": "Produto estragado"
+        }
+      },
+      "required": [
+        "id",
+        "stock_id",
+        "produto_id",
+        "motivo"
+      ]
+    },
+    "Produto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "name": {
+          "type": "string",
+          "example": "PinBall"
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "categoria_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "stock_id",
+        "categoria_id"
+      ]
+    },
+    "ListaDeProdutos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 123
+          },
+          "name": {
+            "type": "string",
+            "example": "PinBall"
+          },
+          "stock_id": {
+            "type": "number",
+            "example": 123
+          },
+          "categoria_id": {
+            "type": "number",
+            "example": 123
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "stock_id",
+          "categoria_id"
+        ]
+      }
+    },
+    "ProdutoCreate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "PinBall"
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "categoria_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "name",
+        "stock_id",
+        "categoria_id"
+      ]
+    },
+    "ProdutoUpdate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "PinBall"
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "categoria_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "name",
+        "stock_id",
+        "categoria_id"
+      ]
+    },
+    "ProdutoDelete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "name": {
+          "type": "string",
+          "example": "PinBall"
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "categoria_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "stock_id",
+        "categoria_id"
+      ]
+    },
+    "Stock": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "name": {
+          "type": "string",
+          "example": "stock_1"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "ListaDeStocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 123
+          },
+          "name": {
+            "type": "string",
+            "example": "stock_1"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      }
+    },
+    "StockCreate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "stock_1"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "StockUpdate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "stock_1"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "StockDelete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "name": {
+          "type": "string",
+          "example": "stock_1"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "Venda": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "id",
+        "produto_id",
+        "stock_id"
+      ]
+    },
+    "ListaDeVendas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 123
+          },
+          "produto_id": {
+            "type": "number",
+            "example": 123
+          },
+          "stock_id": {
+            "type": "number",
+            "example": 123
+          }
+        },
+        "required": [
+          "id",
+          "produto_id",
+          "stock_id"
+        ]
+      }
+    },
+    "VendaCreate": {
+      "type": "object",
+      "properties": {
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "produto_id",
+        "stock_id"
+      ]
+    },
+    "VendaUpdate": {
+      "type": "object",
+      "properties": {
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "produto_id",
+        "stock_id"
+      ]
+    },
+    "VendaDelete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "produto_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "id",
+        "produto_id",
+        "stock_id"
+      ]
+    }
+  }
+}

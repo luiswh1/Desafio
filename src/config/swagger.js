@@ -1,7 +1,14 @@
-/*const { Estadio, EstadioCreate } = 
-    require('../app/documentation/');
+const { Categoria, CategoriaCreate, CategoriaUpdate, CategoriaDelete } = 
+    require('../app/documentation/Categoria');
+const { Devolucao, DevolucaoCreate, DevolucaoUpdate, DevolucaoDelete } = 
+    require('../app/documentation/Devolucoes');
+const { Produto, ProdutoCreate, ProdutoUpdate, ProdutoDelete } = 
+    require('../app/documentation/Produto');
+const { Stock, StockCreate, StockUpdate, StockDelete } = 
+    require('../app/documentation/Stock');
+const { Venda, VendaCreate, VendaUpdate, VendaDelete } = 
+    require('../app/documentation/Venda');
 
-    // Mudar depois
 
 module.exports = {
     info: {
@@ -13,6 +20,7 @@ module.exports = {
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json'],
+    
     /*securityDefinitions: {
         JWT: {
             description: 'JWT Token',
@@ -22,13 +30,46 @@ module.exports = {
         },
     },*/
 
-    // Mudar
-  /*  
+    
     definitions: {
-        Estadio,
-        ListaDeEstadios: [
-            Estadio
+        Categoria,
+        ListaDeCategorias: [
+            Categoria
         ],
-        EstadioCreate,
+        CategoriaCreate,
+        CategoriaUpdate,
+        CategoriaDelete,
+        
+        Devolucao,
+        ListaDeDevolucoes:[
+            Devolucao
+        ],
+        DevolucaoCreate,
+        DevolucaoUpdate,
+        DevolucaoDelete,
+
+        Produto,
+        ListaDeProdutos:[
+            Produto
+        ],
+        ProdutoCreate,
+        ProdutoUpdate,
+        ProdutoDelete,
+
+        Stock,
+        ListaDeStocks:[
+            Stock
+        ],
+        StockCreate,
+        StockUpdate,
+        StockDelete,
+
+        Venda,
+        ListaDeVendas:[
+            Venda
+        ],
+        VendaCreate,
+        VendaUpdate,
+        VendaDelete
     }
-}*/
+}

@@ -1,10 +1,13 @@
-/*const swaggerAutogen = require('swagger-autogen')();
+const swaggerAutogen = require('swagger-autogen')();
 const config = require('./config/swagger');
 
 const endpoints = [
-    //'./src/app/routes/estadio.js',
-    //'./src/app/routes/time.js'
+    './src/app/routes/categoria.js',
+    './src/app/routes/devolucoes.js',
+    './src/app/routes/produto.js',
+    './src/app/routes/stock.js',
+    './src/app/routes/venda.js'
 ];
 const outputFile = './src/swagger_documentation.json';
 
-swaggerAutogen(outputFile, endpoints, config);*/
+swaggerAutogen(outputFile, endpoints, config);
