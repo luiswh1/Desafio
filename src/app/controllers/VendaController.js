@@ -1,22 +1,25 @@
 import Venda from '../models/Vendas';
-//import Produto from '../models/Produto';
-//import Stock from '../models/Stock';
+import Produto from '../models/Produto';
+import Stock from '../models/Stock';
 
 class VendaController {
     async index(req, res){
         try{
             const venda = await Venda.findAll({
-                /*include: [ 
+                include: [
+                    {
+                        model: Stock,
+                    },
                     {
                         model: Produto,
-                        model: Stock
-                    }
-                ]*/ //INCLUDE AINDA ATRAPALHA
+                    },
+                ]
             });
 
             return res.json(venda);
         }
         catch(error){
+            console.log(error)
             return res.status(400).send({
                 message: "Vendas não podem ser exibidas"
             });
@@ -27,7 +30,16 @@ class VendaController {
         const { id } = req.params;
 
         try{
-            const venda = await Venda.findByPk(id);
+            const venda = await Venda.findByPk(id, {
+                include: [
+                    {
+                        model: Stock,
+                    },
+                    {
+                        model: Produto,
+                    },
+                ]
+            });
 
             return res.json(venda);
         }

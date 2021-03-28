@@ -1,15 +1,19 @@
 import Produto from '../models/Produto';
 import Stock from '../models/Stock';
 import Categoria from '../models/Categoria'; 
-
 class ProdutoController {
+  
     async index(req, res) {
         try{
             const produto = await Produto.findAll({
                 include: [
                     {
                         model: Stock,
-                        model: Categoria
+
+                    },
+                    {
+                        model: Categoria, //Requisiçao GET aparecendo um "categorium" inves de categoria
+                      
                     }
                 ]
             });
@@ -17,6 +21,7 @@ class ProdutoController {
             return res.json(produto);
         }
         catch (error){
+            console.log(error); // ERROR CATEGORIUM NO INCLUDE.
             return res.status(400).send({
                 message: "Produtos não encontrados"
             });
@@ -27,7 +32,16 @@ class ProdutoController {
         const { id } = req.params;
 
         try {
-            const produto = await Produto.findByPk(id);
+            const produto = await Produto.findByPk(id, {
+                include: [
+                    {
+                        model: Stock,
+
+                    },
+                    {
+                        model: Categoria,
+                    }
+                ]});
 
             return res.json(produto);
         }

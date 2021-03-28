@@ -1,4 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
+import Produto from './Produto';
 
 
 class Categoria extends Model {
@@ -21,6 +22,7 @@ class Categoria extends Model {
 
         return this;
     }
+
 }
 
 export default Categoria;

@@ -5,13 +5,16 @@ class StockController {
     async index(req, res) {
         try{
         const stocks = await Stock.findAll({
-            
+            include: [
+                {
+                    model: Produto,
+                },
+            ]
         });
 
         return res.json(stocks);
         }
         catch (error){
-            console.log(error)
             return res.status(400).send({
                 message: "Fala ao exibir stocks"
             });
@@ -22,7 +25,13 @@ class StockController {
         const { id } = req.params;
 
         try{
-            const stock = await Stock.findByPk(id);
+            const stock = await Stock.findByPk(id, {
+                include: [
+                    {
+                        model: Produto,
+                    },
+                ]
+            });
 
             return res.json(stock);
         }

@@ -44,12 +44,12 @@ class Devolucao extends Model {
     }
 
     static associate(sequelize){
-        Stock.hasMany(Devolucao, {
+        this.belongsTo(Stock, {
             foreignKey: 'stock_id',
             schema: 'loja'
         });
 
-        Produto.hasMany(Devolucao, {
+        Devolucao.belongsTo(Produto, {
             foreignKey: 'produto_id',
             schema: 'loja'
         });

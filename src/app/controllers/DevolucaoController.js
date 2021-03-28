@@ -8,9 +8,14 @@ class DevolucaoController {
 
         try{
             const devolucoes = await Devolucao.findAll({
-                include: [ //INCLUDE AINDA DÁ PROBLEMA (manter comentado)
-                Stock,
-                Produto 
+                include: [
+                    {
+                        model: Stock,
+
+                    },
+                    {
+                        model: Produto,
+                    },
                 ]
             });
 
@@ -29,10 +34,14 @@ class DevolucaoController {
         try{
             const devolucoes = await Devolucao.findByPk(id, {
                 include: [
-                    Stock,
-                    Produto
-                ]
-            });
+                    {
+                        model: Stock,
+
+                    },
+                    {
+                        model: Produto,
+                    },
+                ]});
 
             return res.json(devolucoes);
         }
@@ -51,7 +60,7 @@ class DevolucaoController {
                 stock_id,
                 produto_id,
                 motivo,
-                created_at //= new Date() //ISSO GERAVA ERRO  
+                created_at: new Date()
             });
 
             return res.json(devolucoes);

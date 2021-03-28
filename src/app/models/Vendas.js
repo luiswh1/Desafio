@@ -46,11 +46,20 @@ class Vendas extends Model {
             foreignKey: 'stock_id',
             schema: 'loja'
         });
+        this.belongsTo(Stock,{
+            foreignKey: 'stock_id',
+            schema: 'loja'
+        })
 
         Produto.hasMany(Vendas, {
             foreignKey: 'produto_id',
             schema: 'loja'
         });
+
+        Vendas.belongsTo(Produto, {
+            foreignKey: 'produto_id',
+            schema: 'loja'
+        })
     }
 }
 
