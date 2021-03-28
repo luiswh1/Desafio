@@ -12,7 +12,7 @@ const models = [
     Stock,
     Produto,
     Vendas,
-    Devolucao,
+    Devolucao
 ];
 
 class Database {

@@ -50,7 +50,12 @@ class Produto extends Model {
             schema: 'loja'
         });
 
-        this.hasMany(Stock, {
+        this.belongsTo(Stock, {
+            foreignKey: 'stock_id',
+            schema: 'loja'
+        });
+
+        Stock.hasMany(Produto, {
             foreignKey: 'stock_id',
             schema: 'loja'
         });

@@ -8,10 +8,10 @@ class DevolucaoController {
 
         try{
             const devolucoes = await Devolucao.findAll({
-                /*include: [ //INCLUDE AINDA DÁ PROBLEMA (manter comentado)
+                include: [ //INCLUDE AINDA DÁ PROBLEMA (manter comentado)
                 Stock,
                 Produto 
-                ]*/
+                ]
             });
 
             return res.json(devolucoes);
@@ -28,10 +28,10 @@ class DevolucaoController {
 
         try{
             const devolucoes = await Devolucao.findByPk(id, {
-                /*include: [
+                include: [
                     Stock,
                     Produto
-                ]*/
+                ]
             });
 
             return res.json(devolucoes);

@@ -2,17 +2,18 @@ import Produto from '../models/Produto';
 import Stock from '../models/Stock';
 
 class StockController {
-    async index(req, res) { 
+    async index(req, res) {
         try{
-            const depositos = await Stock.findAll({
-                
-            });
+        const stocks = await Stock.findAll({
+            
+        });
 
-            return res.json(depositos);
+        return res.json(stocks);
         }
         catch (error){
+            console.log(error)
             return res.status(400).send({
-                message: "Stocks não podem ser exibidos"
+                message: "Fala ao exibir stocks"
             });
         }
     }
