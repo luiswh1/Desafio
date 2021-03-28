@@ -12,7 +12,8 @@ class ProdutoController {
 
                     },
                     {
-                        model: Categoria, //Requisiçao GET aparecendo um "categorium" inves de categoria
+                        model: Categoria,
+                        as: 'Categoria' //Requisiçao GET aparecendo um "categorium" inves de categoria
                       
                     }
                 ]
@@ -40,12 +41,14 @@ class ProdutoController {
                     },
                     {
                         model: Categoria,
+                        as: 'Categoria'
                     }
                 ]});
 
             return res.json(produto);
         }
         catch (error){
+            console.log(error)
             return res.status(404).send({
                 message: "Produto não encontrado"
             });

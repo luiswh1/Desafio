@@ -41,11 +41,13 @@ class Produto extends Model {
 
     static associate(sequelize){
         this.belongsTo(Categoria, {
+            as: 'Categoria',
             foreignKey: 'categoria_id',
             schema: 'loja'
         });
 
         Categoria.hasMany(Produto, {
+            as: 'Categoria',
             foreignKey: 'categoria_id',
             schema: 'loja'
         });

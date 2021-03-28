@@ -23,6 +23,7 @@ class Categoria extends Model {
         return this;
     }
 
+
 }
 
 export default Categoria;
