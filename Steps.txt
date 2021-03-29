@@ -1,7 +1,4 @@
-Controllers e rotas com INCLUDES funcionando
-    
-    Pequeno bug na rota GET do controller 'Produto', na requisiçao retorna "categorium" e nao consegui encontrar de onde esta saindo isso, nao esta escrito em lugar algum,
-    errado esta forma.
+Testes de integraçao do categoria e devolucoes nao estao passando, nao sei por qual motivo, vou consultar o mentor.
 
     - Luis - 28/03/2021 - 01:25AM
         
