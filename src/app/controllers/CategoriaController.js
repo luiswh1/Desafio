@@ -1,5 +1,6 @@
 import Categoria from '../models/Categoria';
 
+
 class CategoriaController {
     async index(req, res) {
         try{
