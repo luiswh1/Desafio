@@ -7,6 +7,7 @@ import StockRout from './app/routes/stock';
 import ProdutoRoute from './app/routes/produto';
 import VendaRoute from './app/routes/venda';
 import DevolucaoRout from './app/routes/devolucoes';
+import DocsRout from './app/routes/docs';
 
 
 class App {
@@ -36,6 +37,7 @@ class App {
        this.server.use(ProdutoRoute);
        this.server.use(VendaRoute);
        this.server.use(DevolucaoRout);
+       this.server.use(DocsRout);
     }
 }
 
