@@ -60,6 +60,9 @@
             },
             "description": "OK"
           },
+          "201": {
+            "description": "Created"
+          },
           "400": {
             "description": "Bad Request",
             "schema": {
@@ -161,7 +164,7 @@
       },
       "delete": {
         "tags": [
-          "Categias"
+          "Categorias"
         ],
         "description": "Obtem uma categoria pelo ID e a deleta",
         "parameters": [
@@ -245,6 +248,9 @@
               "$ref": "#/definitions/Devolucao"
             },
             "description": "OK"
+          },
+          "201": {
+            "description": "Created"
           },
           "400": {
             "description": "Bad Request",
@@ -437,6 +443,9 @@
               "$ref": "#/definitions/Produto"
             },
             "description": "OK"
+          },
+          "201": {
+            "description": "Created"
           },
           "400": {
             "description": "Bad Request",

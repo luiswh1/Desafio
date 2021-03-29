@@ -42,7 +42,7 @@ class CategoriaController {
                 name
             });
 
-            return res.json(categoria);
+            return res.status(201).json(categoria);
         }
         catch (error){
             return res.status(400).send({

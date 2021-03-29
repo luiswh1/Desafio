@@ -4,21 +4,34 @@ import truncate from '../utils/truncate';
 import Produto from '../../src/app/models/Produto';
 
 
-describe('Categories Tests', () => {
+
+describe('Product Tests', () => {
     beforeAll(async () => {
         await truncate();
     });
-    it('Should create a new product', async () => {
+    
+    it('Should return all products', async () => {
         expect.assertions(1);
 
         const result = await request(app)
+            .get('/produtos')
+       
+            expect(result.status).toBe(200)
+        
+    });
+
+    it('Should register a new product', async() => {
+        expect.assertions(1);
+
+        const product = await request(app)
             .post('/produtos')
             .send({
-                name: 'Mouse Razer',
-                stock_id: '3',
-                categoria_id: '2',
-            });
+                name: "PinBall",
+                stock_id: 123,
+                categoria_id: 123
+              });
 
-        expect(result.status).toBe(200);
-    });
+            console.log(product)
+            expect(product.status).toBe(201);
+    })
 });

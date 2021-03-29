@@ -15,17 +15,16 @@ describe('Categories Tests', () => {
             .send({
                 name: 'Alimentos'
             });
-
-        expect(result.status).toBe(200);
+          
+        expect(result.status).toBe(201);
     });
 
     it('Should return all categories', async () => {
-        expect.assertions(2);
+        expect.assertions(1);
 
         const result = await request(app)
             .get('/categorias')
         expect(result.status).toBe(200);
-        expect(result.body.length).toBeGreaterThan(0);
     });
 
 

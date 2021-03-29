@@ -13,7 +13,7 @@ class ProdutoController {
                     },
                     {
                         model: Categoria,
-                        as: 'Categoria' //Requisiçao GET aparecendo um "categorium" inves de categoria
+                        as: 'Categoria' 
                       
                     }
                 ]
@@ -67,7 +67,7 @@ class ProdutoController {
                 categoria_id,
             });
 
-            return res.json(produto);
+            return res.status(201).json(produto);
         }
         catch(error){
             return res.status(400).send({

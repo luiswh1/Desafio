@@ -63,9 +63,10 @@ class DevolucaoController {
                 created_at: new Date()
             });
 
-            return res.json(devolucoes);
+            return res.status(201).json(devolucoes);
         }
         catch (error){
+            console.log(error)
             return res.status(400).send({
                 message: "Devolução não pôde ser realizada"
             });
