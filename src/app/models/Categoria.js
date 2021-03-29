@@ -22,7 +22,7 @@ class Categoria extends Model {
 
         return this;
     }
-
+    
 
 }
 

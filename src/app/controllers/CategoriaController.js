@@ -1,16 +1,10 @@
 import Categoria from '../models/Categoria';
-import Produto from '../models/Produto';
 
 class CategoriaController {
     async index(req, res) {
         try{
         const categorias = await Categoria.findAll({
-            include: [
-                {
-                    model: Produto,
-
-                },
-            ]   
+          
         });
 
         return res.json(categorias);
@@ -27,12 +21,7 @@ class CategoriaController {
 
         try{
             const categoria = await Categoria.findByPk(id, {
-                include: [
-                    {
-                        model: Produto,
-
-                    },
-                ]
+         
             });
 
             return res.json(categoria);

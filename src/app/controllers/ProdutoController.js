@@ -22,7 +22,6 @@ class ProdutoController {
             return res.json(produto);
         }
         catch (error){
-            console.log(error); // ERROR CATEGORIUM NO INCLUDE.
             return res.status(400).send({
                 message: "Produtos não encontrados"
             });
@@ -48,7 +47,6 @@ class ProdutoController {
             return res.json(produto);
         }
         catch (error){
-            console.log(error)
             return res.status(404).send({
                 message: "Produto não encontrado"
             });
