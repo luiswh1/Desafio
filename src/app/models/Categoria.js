@@ -16,7 +16,6 @@ class Categoria extends Model {
             },
         }, {
             sequelize,
-            schema: 'loja',
             tableName: 'categoria'
         });
 

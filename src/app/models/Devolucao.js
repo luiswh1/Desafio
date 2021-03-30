@@ -36,7 +36,6 @@ class Devolucao extends Model {
             },
         }, {
             sequelize,
-            schema: 'loja',
             tableName: 'devolucao'
         });
 
@@ -46,12 +45,10 @@ class Devolucao extends Model {
     static associate(sequelize){
         this.belongsTo(Stock, {
             foreignKey: 'stock_id',
-            schema: 'loja'
         });
 
         Devolucao.belongsTo(Produto, {
             foreignKey: 'produto_id',
-            schema: 'loja'
         });
     }
 }

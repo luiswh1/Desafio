@@ -164,7 +164,7 @@
       },
       "delete": {
         "tags": [
-          "Categorias"
+          "Categias"
         ],
         "description": "Obtem uma categoria pelo ID e a deleta",
         "parameters": [

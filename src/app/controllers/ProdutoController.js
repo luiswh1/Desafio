@@ -70,6 +70,7 @@ class ProdutoController {
             return res.status(201).json(produto);
         }
         catch(error){
+            console.log(error)
             return res.status(400).send({
                 message: "Falha ao cadastrar produto"
             });

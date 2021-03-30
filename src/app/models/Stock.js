@@ -16,7 +16,6 @@ class Stock extends Model {
             },
         }, {
             sequelize,
-            schema: 'loja',
             tableName: 'stock'
         });
 

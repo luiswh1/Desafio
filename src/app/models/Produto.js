@@ -32,7 +32,6 @@ class Produto extends Model {
             }
         }, {
             sequelize,
-            schema: 'loja',
             tableName: 'produto'
         });
 
@@ -43,23 +42,19 @@ class Produto extends Model {
         this.belongsTo(Categoria, {
             as: 'Categoria',
             foreignKey: 'categoria_id',
-            schema: 'loja'
         });
 
         Categoria.hasMany(Produto, {
             as: 'Categoria',
             foreignKey: 'categoria_id',
-            schema: 'loja'
         });
 
         this.belongsTo(Stock, {
             foreignKey: 'stock_id',
-            schema: 'loja'
         });
 
         Stock.hasMany(Produto, {
             foreignKey: 'stock_id',
-            schema: 'loja'
         });
     }
 }

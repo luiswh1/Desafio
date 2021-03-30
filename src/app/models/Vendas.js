@@ -34,7 +34,6 @@ class Vendas extends Model {
             },
         }, {
             sequelize,
-            schema: 'loja',
             tableName: 'vendas'
         });
 
@@ -44,21 +43,21 @@ class Vendas extends Model {
     static associate(sequelize) {
         Stock.hasMany(Vendas, {
             foreignKey: 'stock_id',
-            schema: 'loja'
+
         });
         this.belongsTo(Stock,{
             foreignKey: 'stock_id',
-            schema: 'loja'
+
         })
 
         Produto.hasMany(Vendas, {
             foreignKey: 'produto_id',
-            schema: 'loja'
+
         });
 
         Vendas.belongsTo(Produto, {
             foreignKey: 'produto_id',
-            schema: 'loja'
+
         })
     }
 }

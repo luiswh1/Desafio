@@ -29,7 +29,6 @@ module.exports = {
       }
   }
 }, {
-    schema: 'loja',
     tableName: 'produto'
     });
      
@@ -37,7 +36,6 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
      await queryInterface.dropTable({
-       schema: 'loja',
        tableName: 'produto'
      });
      
