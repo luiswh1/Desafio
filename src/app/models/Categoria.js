@@ -26,3 +26,5 @@ class Categoria extends Model {
 }
 
 export default Categoria;
+
+//Dev By Luis

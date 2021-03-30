@@ -25,3 +25,5 @@ class Stock extends Model {
 }
 
 export default Stock;
+
+//Dev By Luis

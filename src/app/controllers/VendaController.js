@@ -58,7 +58,7 @@ class VendaController {
                 produto_id, stock_id, created_at,
             });
 
-            return res.json(venda);
+            return res.status(201).json(venda);
         }
         catch (error){
             return res.status(400).send({
@@ -111,3 +111,5 @@ class VendaController {
 }
 
 export default new VendaController();
+
+//Dev By Milene

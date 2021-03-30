@@ -54,3 +54,5 @@ class Devolucao extends Model {
 }
 
 export default Devolucao;
+
+//Dev By Luis

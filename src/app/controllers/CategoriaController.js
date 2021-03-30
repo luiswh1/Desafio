@@ -95,3 +95,5 @@ class CategoriaController {
 }
 
 export default new CategoriaController();
+
+//Dev By Luis

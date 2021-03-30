@@ -15,3 +15,5 @@ exports.StockDelete = {
     $id: 123,
     $name: 'stock_1'
 };
+
+//Dev By Milene

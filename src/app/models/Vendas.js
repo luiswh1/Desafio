@@ -63,3 +63,5 @@ class Vendas extends Model {
 }
 
 export default Vendas;
+
+//Dev By Luis
