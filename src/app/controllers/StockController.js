@@ -50,7 +50,7 @@ class StockController {
                 name
             });
 
-            return res.json(stock);
+            return res.status(201).json(stock);
         }
         catch (error){
             return res.status(400).send({
