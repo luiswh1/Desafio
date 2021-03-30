@@ -1,10 +1,8 @@
 import request from 'supertest';
 import app from '../../src/app';
 import truncate from '../utils/truncate';
-import Produto from '../../src/app/models/Produto';
 import Stock from '../../src/app/models/Stock';
-import Categoria from '../../src/app/models/Categoria';
-import Devolucao from '../../src/app/models/Devolucao';
+
 
 describe('Stocks Tests', () => {
     beforeAll(async () => {
