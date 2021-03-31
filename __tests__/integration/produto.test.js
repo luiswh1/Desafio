@@ -9,6 +9,7 @@ import Stock from '../../src/app/models/Stock';
 
 
 describe('Product Tests', () => {
+    
     beforeAll(async () => {
         await truncate();
 

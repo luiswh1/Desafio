@@ -4,9 +4,11 @@ import Categoria from '../../src/app/models/Categoria';
 import truncate from '../utils/truncate';
 
 describe('Categories Tests', () => {
+    jest.setTimeout(80000);
     beforeAll(async () => {
-        await truncate();
+    await truncate();
     });
+    
     it('Should create a new categorie', async () => {
         expect.assertions(1);
 

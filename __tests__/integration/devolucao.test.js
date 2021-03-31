@@ -7,6 +7,7 @@ import Categoria from '../../src/app/models/Categoria';
 import Devolucao from '../../src/app/models/Devolucao';
 
 describe('Devolution Tests', () => {
+    jest.setTimeout(80000);
     beforeAll(async () => {
         await truncate();
     });
