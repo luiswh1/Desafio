@@ -3,12 +3,19 @@ import app from '../../src/app';
 import Categoria from '../../src/app/models/Categoria';
 import truncate from '../utils/truncate';
 
+
+
 describe('Categories Tests', () => {
     jest.setTimeout(80000);
     beforeAll(async () => {
-    await truncate();
+        await truncate();
+
+        const categoriaTeste = await Categoria.create({
+            name: 'Eletronicos'
+        });
     });
-    
+
+
     it('Should create a new categorie', async () => {
         expect.assertions(1);
 
@@ -17,7 +24,7 @@ describe('Categories Tests', () => {
             .send({
                 name: 'Alimentos'
             });
-          
+        
         expect(result.status).toBe(201);
     });
 
@@ -30,33 +37,34 @@ describe('Categories Tests', () => {
     });
 
 
-
     it('Should return a specific categorie', async () => {
-        expect.assertions(3);
+       expect.assertions(3);
 
-        const categoria = await Categoria.findOne({
-            where: { name: 'Alimentos' }
+        const buscarCategoria = await Categoria.findOne({
+            where: { name: 'Eletronicos' }
         });
 
-        //console.log(categoria);
 
         const result = await request(app)
-            .get(`/categorias/${categoria.id}`)
+            .get(`/categorias/${buscarCategoria.id}`);
         
-
-
             expect(result.status).toBe(200);
             expect(result.body.id).toBeDefined();
-            expect(result.body.name).toBe('Alimentos');
+            expect(result.body.name).toBe('Eletronicos');
     
     });
 
     it('Should update a categorie', async () => {
         expect.assertions(1);
+
+        const buscarCategoria = await Categoria.findOne({
+            where: { name: 'Eletronicos' }
+        });
+
         const result = await request(app)
-            .put(`/categorias/1`)
+            .put(`/categorias/${buscarCategoria.id}`)
             .send({
-                name: 'Eletronico'
+                name: 'Tecnologia'
             })
         
             expect(result.status).toBe(200);
@@ -64,11 +72,19 @@ describe('Categories Tests', () => {
 
     it('Should Delete a categorie', async () => {
         expect.assertions(1);
+
+        const buscarCategoria = await Categoria.findOne({
+            where: { name: 'Alimentos' }
+        });
+
+        console.log(buscarCategoria)
+
         const result = await request(app)
-            .delete(`/categorias/1`);
+            .delete(`/categorias/${buscarCategoria.id}`);
         
             expect(result.status).toBe(200);
     });
 });
 
 //Dev By Luis
+//Dev By Pedro

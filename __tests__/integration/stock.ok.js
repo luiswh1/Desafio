@@ -5,6 +5,7 @@ import Stock from '../../src/app/models/Stock';
 
 
 describe('Stocks Tests', () => {
+    jest.setTimeout(80000);
     beforeAll(async () => {
         await truncate();
     });
