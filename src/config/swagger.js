@@ -8,6 +8,8 @@ const { Stock, StockCreate, StockUpdate, StockDelete } =
     require('../app/documentation/Stock');
 const { Venda, VendaCreate, VendaUpdate, VendaDelete } = 
     require('../app/documentation/Venda');
+const { Saldo, SaldoCreate, SaldoUpdate, SaldoDelete } = 
+    require('../app/documentation/Saldo');
 
 
 module.exports = {
@@ -70,6 +72,14 @@ module.exports = {
         ],
         VendaCreate,
         VendaUpdate,
-        VendaDelete
+        VendaDelete,
+
+        Saldo,
+        ListaDeSaldos:[
+            Saldo
+        ],
+        SaldoCreate,
+        SaldoUpdate,
+        SaldoDelete
     }
 }

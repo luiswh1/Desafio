@@ -5,6 +5,7 @@ import Stock from '../app/models/Stock';
 import Produto from '../app/models/Produto';
 import Vendas from '../app/models/Vendas';
 import Devolucao from '../app/models/Devolucao';
+import Saldo from '../app/models/Saldo';
 
 
 const models = [
@@ -12,7 +13,8 @@ const models = [
     Stock,
     Produto,
     Vendas,
-    Devolucao
+    Devolucao,
+    Saldo
 ];
 
 class Database {
