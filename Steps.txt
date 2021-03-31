@@ -1,4 +1,0 @@
-Testes de integraçao do categoria e devolucoes nao estao passando, nao sei por qual motivo, vou consultar o mentor.
-
-    - Luis - 28/03/2021 - 01:25AM
-        

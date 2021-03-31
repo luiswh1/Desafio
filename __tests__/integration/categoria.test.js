@@ -36,6 +36,8 @@ describe('Categories Tests', () => {
             where: { name: 'Alimentos' }
         });
 
+        console.log(categoria);
+
         const result = await request(app)
             .get(`/categorias/${categoria.id}`)
         

@@ -113,7 +113,8 @@ class ProdutoController {
             return res.json(linhas);
         }
         catch (error){
-            return res.status(400).send({
+            console.log(error.message);
+            return res.status(500).send({
                 message: "Não foi possível deletar o produto"
             });
         }

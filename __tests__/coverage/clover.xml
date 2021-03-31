@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1617119977074" clover="3.2.0">
-  <project timestamp="1617119977075" name="All files">
-    <metrics statements="1632" coveredstatements="1334" conditionals="111" coveredconditionals="82" methods="69" coveredmethods="58" elements="1812" coveredelements="1474" complexity="0" loc="1632" ncloc="1632" packages="4" files="21" classes="21"/>
+<coverage generated="1617151104153" clover="3.2.0">
+  <project timestamp="1617151104153" name="All files">
+    <metrics statements="1681" coveredstatements="1375" conditionals="109" coveredconditionals="82" methods="69" coveredmethods="58" elements="1859" coveredelements="1515" complexity="0" loc="1681" ncloc="1681" packages="4" files="21" classes="21"/>
     <package name="controllers">
-      <metrics statements="560" coveredstatements="368" conditionals="54" coveredconditionals="34" methods="35" coveredmethods="29"/>
-      <file name="CategoriaController.js" path="C:\Users\Luis\Desktop\Desafio\src\app\controllers\CategoriaController.js">
-        <metrics statements="97" coveredstatements="74" conditionals="13" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <metrics statements="571" coveredstatements="381" conditionals="54" coveredconditionals="34" methods="35" coveredmethods="29"/>
+      <file name="CategoriaController.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\controllers\CategoriaController.js">
+        <metrics statements="99" coveredstatements="65" conditionals="11" coveredconditionals="7" methods="7" coveredmethods="6"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
@@ -35,18 +35,18 @@
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="30" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
@@ -103,9 +103,11 @@
         <line num="95" count="1" type="stmt"/>
         <line num="96" count="1" type="stmt"/>
         <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
       </file>
-      <file name="DevolucaoController.js" path="C:\Users\Luis\Desktop\Desafio\src\app\controllers\DevolucaoController.js">
-        <metrics statements="122" coveredstatements="102" conditionals="13" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <file name="DevolucaoController.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\controllers\DevolucaoController.js">
+        <metrics statements="124" coveredstatements="104" conditionals="13" coveredconditionals="8" methods="7" coveredmethods="7"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="12" type="stmt"/>
@@ -228,9 +230,11 @@
         <line num="120" count="1" type="stmt"/>
         <line num="121" count="1" type="stmt"/>
         <line num="122" count="1" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
       </file>
-      <file name="ProdutoController.js" path="C:\Users\Luis\Desktop\Desafio\src\app\controllers\ProdutoController.js">
-        <metrics statements="123" coveredstatements="102" conditionals="13" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <file name="ProdutoController.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\controllers\ProdutoController.js">
+        <metrics statements="126" coveredstatements="105" conditionals="13" coveredconditionals="8" methods="7" coveredmethods="7"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="12" type="stmt"/>
@@ -348,15 +352,18 @@
         <line num="115" count="0" type="stmt"/>
         <line num="116" count="0" type="stmt"/>
         <line num="117" count="0" type="stmt"/>
-        <line num="118" count="4" type="stmt"/>
-        <line num="119" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="118" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="119" count="1" type="stmt"/>
         <line num="120" count="1" type="stmt"/>
         <line num="121" count="1" type="stmt"/>
         <line num="122" count="1" type="stmt"/>
         <line num="123" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="126" count="1" type="stmt"/>
       </file>
-      <file name="StockController.js" path="C:\Users\Luis\Desktop\Desafio\src\app\controllers\StockController.js">
-        <metrics statements="105" coveredstatements="67" conditionals="11" coveredconditionals="7" methods="7" coveredmethods="6"/>
+      <file name="StockController.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\controllers\StockController.js">
+        <metrics statements="107" coveredstatements="84" conditionals="13" coveredconditionals="8" methods="7" coveredmethods="7"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="8" type="stmt"/>
@@ -392,22 +399,22 @@
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
+        <line num="36" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
@@ -462,9 +469,11 @@
         <line num="103" count="1" type="stmt"/>
         <line num="104" count="1" type="stmt"/>
         <line num="105" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="107" count="1" type="stmt"/>
       </file>
-      <file name="VendaController.js" path="C:\Users\Luis\Desktop\Desafio\src\app\controllers\VendaController.js">
-        <metrics statements="113" coveredstatements="23" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="2"/>
+      <file name="VendaController.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\controllers\VendaController.js">
+        <metrics statements="115" coveredstatements="23" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="12" type="stmt"/>
@@ -578,13 +587,15 @@
         <line num="111" count="0" type="stmt"/>
         <line num="112" count="0" type="stmt"/>
         <line num="113" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
       </file>
     </package>
     <package name="documentation">
-      <metrics statements="105" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="Categoria.js" path="C:\Users\Luis\Desktop\Desafio\src\app\documentation\Categoria.js">
-        <metrics statements="17" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+      <metrics statements="115" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="Categoria.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\documentation\Categoria.js">
+        <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -601,9 +612,11 @@
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
       </file>
-      <file name="Devolucoes.js" path="C:\Users\Luis\Desktop\Desafio\src\app\documentation\Devolucoes.js">
-        <metrics statements="25" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Devolucoes.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\documentation\Devolucoes.js">
+        <metrics statements="27" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -629,9 +642,11 @@
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
       </file>
-      <file name="Produto.js" path="C:\Users\Luis\Desktop\Desafio\src\app\documentation\Produto.js">
-        <metrics statements="25" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Produto.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\documentation\Produto.js">
+        <metrics statements="27" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -657,9 +672,11 @@
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
       </file>
-      <file name="Stock.js" path="C:\Users\Luis\Desktop\Desafio\src\app\documentation\Stock.js">
-        <metrics statements="17" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="Stock.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\documentation\Stock.js">
+        <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -677,10 +694,12 @@
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
       </file>
-      <file name="Venda.js" path="C:\Users\Luis\Desktop\Desafio\src\app\documentation\Venda.js">
-        <metrics statements="21" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+      <file name="Venda.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\documentation\Venda.js">
+        <metrics statements="23" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -701,12 +720,14 @@
         <line num="19" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
       </file>
     </package>
     <package name="models">
-      <metrics statements="238" coveredstatements="238" conditionals="31" coveredconditionals="30" methods="17" coveredmethods="17"/>
-      <file name="Categoria.js" path="C:\Users\Luis\Desktop\Desafio\src\app\models\Categoria.js">
-        <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <metrics statements="248" coveredstatements="248" conditionals="31" coveredconditionals="30" methods="17" coveredmethods="17"/>
+      <file name="Categoria.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\models\Categoria.js">
+        <metrics statements="30" coveredstatements="30" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="8" type="stmt"/>
@@ -735,9 +756,11 @@
         <line num="26" count="4" type="stmt"/>
         <line num="27" count="4" type="stmt"/>
         <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
       </file>
-      <file name="Devolucao.js" path="C:\Users\Luis\Desktop\Desafio\src\app\models\Devolucao.js">
-        <metrics statements="56" coveredstatements="56" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="Devolucao.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\models\Devolucao.js">
+        <metrics statements="58" coveredstatements="58" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="12" type="stmt"/>
@@ -794,9 +817,11 @@
         <line num="54" count="4" type="stmt"/>
         <line num="55" count="4" type="stmt"/>
         <line num="56" count="4" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
       </file>
-      <file name="Produto.js" path="C:\Users\Luis\Desktop\Desafio\src\app\models\Produto.js">
-        <metrics statements="62" coveredstatements="62" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
+      <file name="Produto.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\models\Produto.js">
+        <metrics statements="64" coveredstatements="64" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="12" type="stmt"/>
@@ -859,9 +884,11 @@
         <line num="60" count="4" type="stmt"/>
         <line num="61" count="4" type="stmt"/>
         <line num="62" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
       </file>
-      <file name="Stock.js" path="C:\Users\Luis\Desktop\Desafio\src\app\models\Stock.js">
-        <metrics statements="27" coveredstatements="27" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="Stock.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\models\Stock.js">
+        <metrics statements="29" coveredstatements="29" conditionals="5" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
@@ -889,9 +916,11 @@
         <line num="25" count="4" type="stmt"/>
         <line num="26" count="4" type="stmt"/>
         <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
       </file>
-      <file name="Vendas.js" path="C:\Users\Luis\Desktop\Desafio\src\app\models\Vendas.js">
-        <metrics statements="65" coveredstatements="65" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
+      <file name="Vendas.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\models\Vendas.js">
+        <metrics statements="67" coveredstatements="67" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="12" type="stmt"/>
@@ -957,12 +986,14 @@
         <line num="63" count="4" type="stmt"/>
         <line num="64" count="4" type="stmt"/>
         <line num="65" count="4" type="stmt"/>
+        <line num="66" count="4" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
       </file>
     </package>
     <package name="routes">
-      <metrics statements="729" coveredstatements="728" conditionals="24" coveredconditionals="18" methods="12" coveredmethods="12"/>
-      <file name="categoria.js" path="C:\Users\Luis\Desktop\Desafio\src\app\routes\categoria.js">
-        <metrics statements="149" coveredstatements="149" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <metrics statements="747" coveredstatements="746" conditionals="24" coveredconditionals="18" methods="12" coveredmethods="12"/>
+      <file name="categoria.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\routes\categoria.js">
+        <metrics statements="152" coveredstatements="152" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="4" type="stmt"/>
@@ -1112,9 +1143,12 @@
         <line num="147" count="4" type="stmt"/>
         <line num="148" count="4" type="stmt"/>
         <line num="149" count="4" type="stmt"/>
+        <line num="150" count="4" type="stmt"/>
+        <line num="151" count="4" type="stmt"/>
+        <line num="152" count="4" type="stmt"/>
       </file>
-      <file name="devolucoes.js" path="C:\Users\Luis\Desktop\Desafio\src\app\routes\devolucoes.js">
-        <metrics statements="142" coveredstatements="142" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="devolucoes.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\routes\devolucoes.js">
+        <metrics statements="145" coveredstatements="145" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="4" type="stmt"/>
@@ -1257,9 +1291,12 @@
         <line num="140" count="4" type="stmt"/>
         <line num="141" count="4" type="stmt"/>
         <line num="142" count="4" type="stmt"/>
+        <line num="143" count="4" type="stmt"/>
+        <line num="144" count="4" type="stmt"/>
+        <line num="145" count="4" type="stmt"/>
       </file>
-      <file name="docs.js" path="C:\Users\Luis\Desktop\Desafio\src\app\routes\docs.js">
-        <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="docs.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\routes\docs.js">
+        <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="8" type="stmt"/>
@@ -1272,9 +1309,12 @@
         <line num="10" count="4" type="stmt"/>
         <line num="11" count="4" type="stmt"/>
         <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
       </file>
-      <file name="produto.js" path="C:\Users\Luis\Desktop\Desafio\src\app\routes\produto.js">
-        <metrics statements="142" coveredstatements="141" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="produto.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\routes\produto.js">
+        <metrics statements="145" coveredstatements="144" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="4" type="stmt"/>
@@ -1417,9 +1457,12 @@
         <line num="140" count="4" type="stmt"/>
         <line num="141" count="4" type="stmt"/>
         <line num="142" count="4" type="stmt"/>
+        <line num="143" count="4" type="stmt"/>
+        <line num="144" count="4" type="stmt"/>
+        <line num="145" count="4" type="stmt"/>
       </file>
-      <file name="stock.js" path="C:\Users\Luis\Desktop\Desafio\src\app\routes\stock.js">
-        <metrics statements="142" coveredstatements="142" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="stock.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\routes\stock.js">
+        <metrics statements="145" coveredstatements="145" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="4" type="stmt"/>
@@ -1562,9 +1605,12 @@
         <line num="140" count="4" type="stmt"/>
         <line num="141" count="4" type="stmt"/>
         <line num="142" count="4" type="stmt"/>
+        <line num="143" count="4" type="stmt"/>
+        <line num="144" count="4" type="stmt"/>
+        <line num="145" count="4" type="stmt"/>
       </file>
-      <file name="venda.js" path="C:\Users\Luis\Desktop\Desafio\src\app\routes\venda.js">
-        <metrics statements="142" coveredstatements="142" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="venda.js" path="C:\Growdev\Desafio-BackEnd-Marcelo\src\app\routes\venda.js">
+        <metrics statements="145" coveredstatements="145" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="4" type="stmt"/>
@@ -1707,6 +1753,9 @@
         <line num="140" count="4" type="stmt"/>
         <line num="141" count="4" type="stmt"/>
         <line num="142" count="4" type="stmt"/>
+        <line num="143" count="4" type="stmt"/>
+        <line num="144" count="4" type="stmt"/>
+        <line num="145" count="4" type="stmt"/>
       </file>
     </package>
   </project>
