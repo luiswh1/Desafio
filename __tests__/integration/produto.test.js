@@ -9,7 +9,7 @@ import Stock from '../../src/app/models/Stock';
 
 
 describe('Product Tests', () => {
-    
+    jest.setTimeout(80000);
     beforeAll(async () => {
         await truncate();
 
