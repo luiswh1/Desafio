@@ -1,7 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 import Stock from './Stock';
 import Vendas from './Vendas';
-import Venda from './Vendas';
 
 class Saldo extends Model {
     static init(sequelize){
@@ -15,7 +14,7 @@ class Saldo extends Model {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references:{
-                  model: 'venda',
+                  model: 'vendas',
                   key: 'id'
                 }
               },
@@ -53,11 +52,11 @@ class Saldo extends Model {
         });
 
         Vendas.hasMany(Saldo,{
-            foireingKey: 'vendas_id'
+            foireingKey: 'saldo_id'
         });
 
         Saldo.belongsTo(Vendas, {
-            foireingKey: 'vendas_id'
+            foireingKey: 'saldo_id'
         });
     }
 }
