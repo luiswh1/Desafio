@@ -5,12 +5,18 @@ import Stock from '../models/Stock';
 class SaldoController{
     async index(req, res){
         const saldo = await Saldo.findAll({
+            attributes: [ 'venda_id', 'stock_id', 'quantidade' ],
             include:[
                 {
                     model: Stock,
                 },
                 {
                     model: Venda,
+                    attributes: [
+                        'produto_id',
+                        'stock_id',
+                        'created_at',
+                    ],
                 },
             ]
         });
@@ -36,10 +42,10 @@ class SaldoController{
     }
 
     async store(req, res){
-        const { venda_id, stock_id, quantidade, created_at } = req.body;
+        const { venda_id, stock_id, quantidade } = req.body;
 
         const saldo = await Saldo.create({
-            venda_id, stock_id, quantidade, created_at
+            venda_id, stock_id, quantidade, created_at: new Date(),
         });
 
         return res.status(201).json(saldo);
@@ -47,10 +53,10 @@ class SaldoController{
 
     async update(req, res){
         const { id } = req.params;
-        const { venda_id, stock_id, quantidade, created_at } = req.body;
+        const { venda_id, stock_id, quantidade } = req.body;
 
         const[linhas, objetos] = await Saldo.update({
-            venda_id, stock_id, quantidade, created_at,
+            venda_id, stock_id, quantidade, created_at: new Date(),
         },{
             where: { id },
             returning: true
