@@ -7,7 +7,7 @@
       "predev": "yarn doc",
       "dev": "nodemon ./src/server.js",
       "pretest": "cross-env NODE_ENV=test sequelize db:migrate",
-      "test": "cross-env NODE_ENV=test jest",
+      "test": "cross-env NODE_ENV=test jest -i",
       "posttest": "cross-env NODE_ENV=test sequelize db:migrate:undo:all",
       "doc": "node src/swagger.js"
     },
