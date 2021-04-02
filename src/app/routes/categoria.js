@@ -121,7 +121,7 @@ routes.delete(
     '/categorias/:id', 
     CategoriaController.delete
     // #swagger.description = 'Obtem uma categoria pelo ID e a deleta'
-    // #swagger.tags = ['Categias']
+    // #swagger.tags = ['Categorias']
     /*
         #swagger.parameters['id'] = {
             in: 'path',

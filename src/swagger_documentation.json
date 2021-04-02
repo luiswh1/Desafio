@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Lojinha do Marcelo",
-    "description": "Lojas Marcelo"
+    "title": "Projeto Marcelo",
+    "description": "Projeto Marcelo"
   },
   "host": "localhost:3000",
   "basePath": "/",
@@ -164,7 +164,7 @@
       },
       "delete": {
         "tags": [
-          "Categias"
+          "Categorias"
         ],
         "description": "Obtem uma categoria pelo ID e a deleta",
         "parameters": [
@@ -341,7 +341,6 @@
             "description": "OK"
           },
           "400": {
-            "description": "Bad Request",
             "schema": {
               "type": "object",
               "properties": {
@@ -353,7 +352,8 @@
               "xml": {
                 "name": "main"
               }
-            }
+            },
+            "description": "Bad Request"
           }
         }
       },
@@ -409,9 +409,6 @@
               "$ref": "#/definitions/Produto"
             },
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           }
         }
       },
@@ -448,7 +445,6 @@
             "description": "Created"
           },
           "400": {
-            "description": "Bad Request",
             "schema": {
               "type": "object",
               "properties": {
@@ -460,7 +456,8 @@
               "xml": {
                 "name": "main"
               }
-            }
+            },
+            "description": "Bad Request"
           }
         }
       }
@@ -565,13 +562,12 @@
         ],
         "responses": {
           "200": {
+            "description": "OK",
             "schema": {
               "$ref": "#/definitions/ProdutoDelete"
-            },
-            "description": "OK"
+            }
           },
           "400": {
-            "description": "Bad Request",
             "schema": {
               "type": "object",
               "properties": {
@@ -583,7 +579,11 @@
               "xml": {
                 "name": "main"
               }
-            }
+            },
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -635,6 +635,9 @@
               "$ref": "#/definitions/Stock"
             },
             "description": "OK"
+          },
+          "201": {
+            "description": "Created"
           },
           "400": {
             "description": "Bad Request",
@@ -793,9 +796,6 @@
               "$ref": "#/definitions/Venda"
             },
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           }
         }
       },
@@ -828,8 +828,10 @@
             },
             "description": "OK"
           },
+          "201": {
+            "description": "Created"
+          },
           "400": {
-            "description": "Bad Request",
             "schema": {
               "type": "object",
               "properties": {
@@ -841,7 +843,8 @@
               "xml": {
                 "name": "main"
               }
-            }
+            },
+            "description": "Bad Request"
           }
         }
       }
@@ -917,7 +920,6 @@
             "description": "OK"
           },
           "400": {
-            "description": "Bad Request",
             "schema": {
               "type": "object",
               "properties": {
@@ -929,7 +931,8 @@
               "xml": {
                 "name": "main"
               }
-            }
+            },
+            "description": "Bad Request"
           }
         }
       },
@@ -968,6 +971,195 @@
                 "name": "main"
               }
             }
+          }
+        }
+      }
+    },
+    "/saldos": {
+      "get": {
+        "tags": [
+          "Saldos"
+        ],
+        "description": "Listagem de saldos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Saldo"
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Saldos"
+        ],
+        "description": "Criar um novo saldo",
+        "parameters": [
+          {
+            "name": "saldo",
+            "in": "body",
+            "description": "Dados do saldo",
+            "schema": {
+              "$ref": "#/definitions/SaldoCreate"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do saldo",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Saldo"
+            },
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Dados inválidos."
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/saldos/{id}": {
+      "get": {
+        "tags": [
+          "Saldos"
+        ],
+        "description": "Obtem um saldo pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID do saldo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ListaDeSaldos"
+            },
+            "description": "OK"
+          },
+          "404": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Saldo não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Saldos"
+        ],
+        "description": "Atualiza os dados de um saldo já criado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "saldo",
+            "in": "body",
+            "description": "Dados do saldo",
+            "schema": {
+              "$ref": "#/definitions/SaldoUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Saldo"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Saldo não encontrado"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Saldos"
+        ],
+        "description": "Obtem um saldo pelo ID e deleta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "description": "ID do saldo"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/SaldoDelete"
+            },
+            "description": "OK"
+          },
+          "400": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "msg": {
+                  "type": "string",
+                  "example": "Falha ao deletar o saldo"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            },
+            "description": "Bad Request"
           }
         }
       }
@@ -1487,6 +1679,134 @@
         "id",
         "produto_id",
         "stock_id"
+      ]
+    },
+    "Saldo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "venda_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "quantidade": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "id",
+        "venda_id",
+        "stock_id",
+        "quantidade"
+      ]
+    },
+    "ListaDeSaldos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 123
+          },
+          "venda_id": {
+            "type": "number",
+            "example": 123
+          },
+          "stock_id": {
+            "type": "number",
+            "example": 123
+          },
+          "quantidade": {
+            "type": "number",
+            "example": 123
+          }
+        },
+        "required": [
+          "id",
+          "venda_id",
+          "stock_id",
+          "quantidade"
+        ]
+      }
+    },
+    "SaldoCreate": {
+      "type": "object",
+      "properties": {
+        "venda_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "quantidade": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "venda_id",
+        "stock_id",
+        "quantidade"
+      ]
+    },
+    "SaldoUpdate": {
+      "type": "object",
+      "properties": {
+        "venda_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "quantidade": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "venda_id",
+        "stock_id",
+        "quantidade"
+      ]
+    },
+    "SaldoDelete": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": 123
+        },
+        "venda_id": {
+          "type": "number",
+          "example": 123
+        },
+        "stock_id": {
+          "type": "number",
+          "example": 123
+        },
+        "quantidade": {
+          "type": "number",
+          "example": 123
+        }
+      },
+      "required": [
+        "id",
+        "venda_id",
+        "stock_id",
+        "quantidade"
       ]
     }
   }

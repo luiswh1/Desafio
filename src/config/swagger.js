@@ -15,8 +15,8 @@ const { Saldo, SaldoCreate, SaldoUpdate, SaldoDelete } =
 module.exports = {
     info: {
         version: '1.0.0',
-        title: 'Lojinha do Marcelo',
-        description: 'Lojas Marcelo',        
+        title: 'Projeto Marcelo',
+        description: 'Projeto Marcelo',        
     },
     host: 'localhost:3000',
     schemes: ['http'],

@@ -7,7 +7,7 @@ const endpoints = [
     './src/app/routes/produto.js',
     './src/app/routes/stock.js',
     './src/app/routes/venda.js',
-    '.src/app/routes/saldo.js'
+    './src/app/routes/saldo.js'
 ];
 const outputFile = './src/swagger_documentation.json';
 
