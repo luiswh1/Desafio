@@ -63,7 +63,7 @@ class VendaController {
 
             if(saldo && saldo.quantidade >= 1){
                 const venda = await Venda.create({
-                    produto_id, stock_id, created_at,
+                    produto_id, stock_id, created_at: new Date()
                 });
 
                 let quantidade = saldo.quantidade - 1;

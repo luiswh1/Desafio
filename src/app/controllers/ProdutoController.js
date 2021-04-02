@@ -1,6 +1,7 @@
 import Produto from '../models/Produto';
 import Stock from '../models/Stock';
 import Categoria from '../models/Categoria'; 
+import Saldo from '../models/Saldo';
 class ProdutoController {
   
     async index(req, res) {
@@ -61,12 +62,21 @@ class ProdutoController {
         } = req.body;
 
         //try{
-            const produto = await Produto.create({
+
+              const produto = await Produto.create({
                 name,
                 stock_id,
                 categoria_id,
-            });
-
+            });   
+                 
+            if(produto) {
+                const adicionarSaldo = await Saldo.create({
+                   stock_id: produto.stock_id,
+                   produto_id: produto.id,
+                   quantidade: 1,
+                   created_at: new Date()
+                });
+            }
             return res.status(201).json(produto);
         /*}
         catch(error){
