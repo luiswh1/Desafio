@@ -68,14 +68,14 @@ class VendaController {
 
                 let quantidade = saldo.quantidade - 1;
 
-                if(venda){
-                    const [linhas, objetos] = await Saldo.update({
-                        quantidade,
-                    },{
-                        where: { id },
-                        returning: true
-                    });
-                }
+                saldo.quantidade = quantidade;
+                
+                await Saldo.update({
+                    quantidade,
+                },{
+                    where: { id: saldo.id }
+
+                });
                 
                 return res.status(201).json(venda);
                 
