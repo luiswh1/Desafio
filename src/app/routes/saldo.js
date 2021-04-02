@@ -140,3 +140,6 @@ routes.delete(
 );
 
 export default routes;
+
+// Dev By Luis (Routes)
+// Dev By Milene (Documentation)

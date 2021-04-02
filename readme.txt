@@ -1,4 +1,4 @@
-Está é a Primeira versao (1.0) do sistema desenvolvido para a loja do cliente Marcelo.
+Desafio Concluido, Banco de dados para registro de Produtos, Compras e devoluçoes 100% funcional.
 
-Software funcional, pequenos bugs nos testes integrados mas a funcionalidade é de 100%.
+Version 2.0.0
         

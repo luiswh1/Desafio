@@ -3,11 +3,11 @@ import Venda from '../models/Vendas';
 import Stock from '../models/Stock';
 import Produto from '../models/Produto';
 
-class SaldoController{
-    async index(req, res){
+class SaldoController {
+    async index(req, res) {
         const saldo = await Saldo.findAll({
-            attributes: [ 'venda_id', 'stock_id', 'quantidade' ],
-            include:[
+            attributes: ['venda_id', 'stock_id', 'quantidade'],
+            include: [
                 {
                     model: Stock,
                 },
@@ -28,11 +28,11 @@ class SaldoController{
         return res.json(saldo);
     }
 
-    async show(req, res){
+    async show(req, res) {
         const { id } = req.params;
 
         const saldo = await Saldo.findByPk(id, {
-            include:[
+            include: [
                 {
                     model: Stock,
                 },
@@ -45,23 +45,33 @@ class SaldoController{
         return res.json(saldo);
     }
 
-    async store(req, res){
+    async store(req, res) {
         const { venda_id, stock_id, produto_id, devolucao_id, quantidade } = req.body;
 
         const saldo = await Saldo.create({
-            venda_id, stock_id, produto_id, devolucao_id, quantidade, created_at: new Date(),
+            venda_id,
+            stock_id,
+            produto_id,
+            devolucao_id,
+            quantidade,
+            created_at: new Date(),
         });
 
         return res.status(201).json(saldo);
     }
 
-    async update(req, res){
+    async update(req, res) {
         const { id } = req.params;
         const { venda_id, stock_id, produto_id, devolucao_id, quantidade } = req.body;
 
-        const[linhas, objetos] = await Saldo.update({
-            venda_id, stock_id, produto_id, devolucao_id, quantidade, created_at: new Date(),
-        },{
+        const [linhas, objetos] = await Saldo.update({
+            venda_id,
+            stock_id,
+            produto_id,
+            devolucao_id,
+            quantidade,
+            created_at: new Date(),
+        }, {
             where: { id },
             returning: true
         });
@@ -71,7 +81,7 @@ class SaldoController{
         });
     }
 
-    async delete(req, res){
+    async delete(req, res) {
         const { id } = req.params;
 
         const saldo = await Saldo.destroy({
@@ -84,3 +94,6 @@ class SaldoController{
 }
 
 export default new SaldoController();
+
+
+// dev by Luis, Milene and Pedro .

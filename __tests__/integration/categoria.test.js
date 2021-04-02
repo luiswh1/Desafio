@@ -77,7 +77,6 @@ describe('Categories Tests', () => {
             where: { name: 'Alimentos' }
         });
 
-        console.log(buscarCategoria)
 
         const result = await request(app)
             .delete(`/categorias/${buscarCategoria.id}`);
