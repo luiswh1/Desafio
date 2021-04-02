@@ -120,7 +120,7 @@ class ProdutoController {
                 returning: true
             });
 
-            return res.json(linhas);
+            return res.status(200).json(linhas);
         }
         catch (error){
             console.log(error.message);

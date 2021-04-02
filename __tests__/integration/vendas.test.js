@@ -5,6 +5,7 @@ import Produto from '../../src/app/models/Produto';
 import truncate from '../utils/truncate';
 import Stock from '../../src/app/models/Stock';
 import Vendas from '../../src/app/models/Vendas';
+import Saldo from '../../src/app/models/Saldo';
 
 describe('Sales tests', () => {
     jest.setTimeout(80000);
@@ -26,6 +27,13 @@ describe('Sales tests', () => {
             stock_id: criarStock.id,
             categoria_id: criarCategoria.id
         });
+
+        const criarSaldo = await Saldo.create({
+            stock_id: criarStock.id,
+            produto_id: criarProduto.id,
+            quantidade: 1,
+            created_at: new Date()
+        })
     });
 
     it('Should create a new sale', async () => {
@@ -42,6 +50,10 @@ describe('Sales tests', () => {
         const buscarProduto = await Produto.findOne({
             where: { name: 'Teclado' }
         });
+
+        const buscaSaldo = await Saldo.findOne({
+            where: { quantidade: 1 }
+        })
 
         const result = await request(app)
             .post('/vendas')

@@ -21,6 +21,13 @@ describe('Product Tests', () => {
             name: 'Desenvolvimento de Software'
         });
 
+        const criarProduto = await Produto.create({
+            name: 'VueJS',
+            stock_id: criarStock.id,
+            categoria_id: criarCategoria.id
+        });
+
+
     });
 
     it('Should register a new product', async () => {
@@ -95,7 +102,7 @@ describe('Product Tests', () => {
         expect.assertions(1);
 
         const produto = await Produto.findOne({
-            where: { name: 'NodeJS' }
+            where: { name: 'VueJS' }
         });
 
         const result = await request(app)
