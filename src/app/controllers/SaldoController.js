@@ -1,6 +1,7 @@
 import Saldo from '../models/Saldo';
 import Venda from '../models/Vendas';
 import Stock from '../models/Stock';
+import Produto from '../models/Produto';
 
 class SaldoController{
     async index(req, res){
@@ -17,6 +18,9 @@ class SaldoController{
                         'stock_id',
                         'created_at',
                     ],
+                },
+                {
+                    model: Produto,
                 },
             ]
         });
@@ -42,10 +46,10 @@ class SaldoController{
     }
 
     async store(req, res){
-        const { venda_id, stock_id, quantidade } = req.body;
+        const { venda_id, stock_id, produto_id, devolucao_id, quantidade } = req.body;
 
         const saldo = await Saldo.create({
-            venda_id, stock_id, quantidade, created_at: new Date(),
+            venda_id, stock_id, produto_id, devolucao_id, quantidade, created_at: new Date(),
         });
 
         return res.status(201).json(saldo);
@@ -53,10 +57,10 @@ class SaldoController{
 
     async update(req, res){
         const { id } = req.params;
-        const { venda_id, stock_id, quantidade } = req.body;
+        const { venda_id, stock_id, produto_id, devolucao_id, quantidade } = req.body;
 
         const[linhas, objetos] = await Saldo.update({
-            venda_id, stock_id, quantidade, created_at: new Date(),
+            venda_id, stock_id, produto_id, devolucao_id, quantidade, created_at: new Date(),
         },{
             where: { id },
             returning: true

@@ -1,6 +1,7 @@
 import Sequelize, { Model } from 'sequelize';
 import Stock from './Stock';
 import Produto from './Produto';
+import Saldo from './Saldo';
 
 class Devolucao extends Model {
     static init(sequelize){
@@ -49,6 +50,10 @@ class Devolucao extends Model {
 
         Devolucao.belongsTo(Produto, {
             foreignKey: 'produto_id',
+        });
+
+        this.belongsTo(Saldo, {
+            foreignKey: 'saldo_id',
         });
     }
 }

@@ -1,10 +1,11 @@
 import Venda from '../models/Vendas';
 import Produto from '../models/Produto';
 import Stock from '../models/Stock';
+import Saldo from '../models/Saldo';
 
 class VendaController {
     async index(req, res){
-        try{
+        //try{
             const venda = await Venda.findAll({
                 include: [
                     {
@@ -17,13 +18,13 @@ class VendaController {
             });
 
             return res.json(venda);
-        }
+        /*}
         catch(error){
             console.log(error)
             return res.status(400).send({
                 message: "Vendas não podem ser exibidas"
             });
-        }
+        }*/
     }
 
     async show(req, res){
@@ -52,19 +53,43 @@ class VendaController {
 
     async store(req, res){
         const { produto_id, stock_id, created_at } = req.body;
+        
 
-        try{
-            const venda = await Venda.create({
-                produto_id, stock_id, created_at,
+        //try{
+
+            const saldo = await Saldo.findOne({
+                where: { produto_id, stock_id }
             });
 
-            return res.status(201).json(venda);
-        }
+            if(saldo && saldo.quantidade >= 1){
+                const venda = await Venda.create({
+                    produto_id, stock_id, created_at,
+                });
+
+                let quantidade = saldo.quantidade - 1;
+
+                if(venda){
+                    const [linhas, objetos] = await Saldo.update({
+                        quantidade,
+                    },{
+                        where: { id },
+                        returning: true
+                    });
+                }
+                
+                return res.status(201).json(venda);
+                
+            } else {
+                //console.log(Saldo.quantidade);
+                return res.send({ msg: 'não existe saldo'});
+            }
+
+        /*}
         catch (error){
             return res.status(400).send({
                 message: "Venda não executada" 
             });
-        }
+        }*/
     }
 
     async update(req, res){

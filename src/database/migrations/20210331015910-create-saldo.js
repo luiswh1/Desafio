@@ -10,9 +10,17 @@ module.exports = {
       },
       venda_id:{
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references:{
           model: 'vendas',
+          key: 'id'
+        }
+      },
+      devolucao_id:{
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references:{
+          model: 'devolucao',
           key: 'id'
         }
       },
@@ -21,6 +29,14 @@ module.exports = {
         allowNull: false,
         references:{
           model: 'stock',
+          key: 'id'
+        }
+      },
+      produto_id:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model: 'produto',
           key: 'id'
         }
       },

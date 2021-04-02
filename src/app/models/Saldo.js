@@ -1,6 +1,8 @@
 import Sequelize, { Model } from 'sequelize';
 import Stock from './Stock';
 import Vendas from './Vendas';
+import Devolucao from './Devolucao';
+import Produto from './Produto';
 
 class Saldo extends Model {
     static init(sequelize){
@@ -12,9 +14,17 @@ class Saldo extends Model {
               },
               venda_id:{
                 type: Sequelize.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 references:{
                   model: 'vendas',
+                  key: 'id'
+                }
+              },
+              devolucao_id:{
+                type: Sequelize.INTEGER,
+                allowNull: true,
+                references:{
+                  model: 'devolucao',
                   key: 'id'
                 }
               },
@@ -23,6 +33,14 @@ class Saldo extends Model {
                 allowNull: false,
                 references:{
                   model: 'stock',
+                  key: 'id'
+                }
+              },
+              produto_id:{
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references:{
+                  model: 'produto',
                   key: 'id'
                 }
               },
@@ -58,6 +76,22 @@ class Saldo extends Model {
         Saldo.belongsTo(Vendas, {
             foireingKey: 'saldo_id'
         });
+
+        Devolucao.hasMany(Saldo,{
+          foireingKey: 'saldo_id'
+      });
+
+      Saldo.belongsTo(Devolucao, {
+          foireingKey: 'saldo_id'
+      });
+
+      Saldo.belongsTo(Produto,{
+        foireingKey: 'produto_id'
+    });
+
+    Produto.hasMany(Saldo, {
+        foireingKey: 'produto_id'
+    });
     }
 }
 

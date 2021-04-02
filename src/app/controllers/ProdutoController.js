@@ -4,7 +4,7 @@ import Categoria from '../models/Categoria';
 class ProdutoController {
   
     async index(req, res) {
-        try{
+        //try{
             const produto = await Produto.findAll({
                 include: [
                     {
@@ -20,12 +20,12 @@ class ProdutoController {
             });
 
             return res.json(produto);
-        }
+        /*}
         catch (error){
             return res.status(400).send({
                 message: "Produtos não encontrados"
             });
-        }
+        }*/
     }
 
     async show (req, res) {
@@ -60,7 +60,7 @@ class ProdutoController {
             categoria_id,
         } = req.body;
 
-        try{
+        //try{
             const produto = await Produto.create({
                 name,
                 stock_id,
@@ -68,13 +68,13 @@ class ProdutoController {
             });
 
             return res.status(201).json(produto);
-        }
+        /*}
         catch(error){
             console.log(error)
             return res.status(400).send({
                 message: "Falha ao cadastrar produto"
             });
-        }
+        }*/
     }
 
     async update(req, res){
