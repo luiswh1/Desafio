@@ -53,7 +53,7 @@ class Devolucao extends Model {
         });
 
         this.belongsTo(Saldo, {
-            foreignKey: 'saldo_id',
+            foreignKey: 'produto_id',
         });
     }
 }

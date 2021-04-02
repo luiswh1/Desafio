@@ -1,6 +1,7 @@
 import Stock from '../models/Stock';
 import Produto from '../models/Produto';
 import Devolucao from '../models/Devolucao';
+import Saldo from '../models/Saldo';
 
 
 class DevolucaoController {
@@ -62,6 +63,14 @@ class DevolucaoController {
                 motivo,
                 created_at: new Date()
             });
+
+            if(devolucoes){
+                const saldoUpdate = await Saldo.update({
+                    quantidade: + 1
+                }, {
+                    where: { produto_id }
+                })
+            }
 
             return res.status(201).json(devolucoes);
         }
